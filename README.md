@@ -1,0 +1,2 @@
+# KazuyaSeto.github.io
+MySite
