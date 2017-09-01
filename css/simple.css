@@ -1,12 +1,14 @@
 @charset "UTF-8";
 
-@import url(https://fonts.googleapis.com/css?family=Inconsolata:200);
+@import url(https://fonts.googleapis.com/earlyaccess/roundedmplus:1c:100);
 
 body {
     max-width: 500px;
     margin: 4em auto 2em auto;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Tsukushi A Round Gothic',"Rounded Mplus 1c";
     background: white;
+    text-align: left;
+    color: #052169;
 }
 
 a {
@@ -24,7 +26,7 @@ article p {
 }
 
 p {
-    line-height: 1.2em;
+    line-height: 1.4em;
 }
 
 .catalog-item {
@@ -36,3 +38,13 @@ p {
     float: right;
     width: 320px;
 }
+
+.profileImage {
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+}
+
+
