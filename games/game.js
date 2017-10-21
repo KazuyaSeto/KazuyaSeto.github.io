@@ -57,6 +57,7 @@ preloadGame.prototype = {
         game.load.image("tap", gameOptions.spritesPath + "tap.png");
         game.load.spritesheet('button', 'assets/sprites/button_spritesheet.png', 256, 128, 2);
         game.load.audio("coinsound", gameOptions.soundPath + "coin.wav");
+        game.load.audio("upsound", gameOptions.soundPath + "1up.wav");
         game.load.image("text", gameOptions.spritesPath + "pushthebutton.png.png");
         game.load.bitmapFont("font", gameOptions.fontsPath + "font.png", gameOptions.fontsPath + "font.fnt");
     },
@@ -69,7 +70,10 @@ preloadGame.prototype = {
 var playGame = function(game){}
 playGame.prototype = {
     create: function(){
+        this.coinCount = 0;
         this.coinSound = game.add.audio("coinsound");
+        this.upSound = game.add.audio("upsound");
+        
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.world.setBounds(0, - 3 * gameOptions.floorGap, game.width, game.height + 3 * gameOptions.floorGap);
         this.createMenu();
@@ -97,7 +101,13 @@ playGame.prototype = {
 
     buttonClicked: function(){
         if(this.menuGroup != null){
-            this.coinSound.play();
+            if(this.coinCount >= 100) {
+                this.coinCount = 0;
+                this.upSound.play();
+            } else {
+                this.coinCount += 1;
+                this.coinSound.play();
+            }
             this.titleText.angle += 10;
             var tween = game.add.tween(this.titleText.position).to({ y: 1800 }, 300, Phaser.Easing.Cubic.InOut, true, 0, 0, false);
             this.tapTween.stop(function(){});
