@@ -32,7 +32,7 @@ export default class GameState extends Phaser.State {
         this.game.load.audio(this.sounds.jump, soundPath + this.sounds.jump + ".wav");
         this.game.load.audio(this.sounds.pause, soundPath + this.sounds.pause + ".wav");
         this.game.load.audio(this.sounds.dash, soundPath + this.sounds.dash + ".wav");
-        this.game.load.audio(this.sounds.bgm, soundPath + this.sounds.bgm + ".wav");
+        this.game.load.audio(this.sounds.bgm, soundPath + this.sounds.bgm + ".mp3");
         
     }
 
