@@ -1,0 +1,84 @@
+{"frames": {
+
+"idle/0000":
+{
+	"frame": {"x":86,"y":1,"w":66,"h":111},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":32,"y":10,"w":66,"h":111},
+	"sourceSize": {"w":128,"h":128}
+},
+"idle/0001":
+{
+	"frame": {"x":86,"y":1,"w":66,"h":111},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":32,"y":10,"w":66,"h":111},
+	"sourceSize": {"w":128,"h":128}
+},
+"idle/0002":
+{
+	"frame": {"x":86,"y":1,"w":66,"h":111},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":32,"y":10,"w":66,"h":111},
+	"sourceSize": {"w":128,"h":128}
+},
+"idle/0003":
+{
+	"frame": {"x":154,"y":1,"w":66,"h":111},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":32,"y":10,"w":66,"h":111},
+	"sourceSize": {"w":128,"h":128}
+},
+"jump/0000":
+{
+	"frame": {"x":164,"y":119,"w":84,"h":117},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":30,"y":10,"w":84,"h":117},
+	"sourceSize": {"w":128,"h":128}
+},
+"run/0000":
+{
+	"frame": {"x":1,"y":104,"w":78,"h":113},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":25,"y":10,"w":78,"h":113},
+	"sourceSize": {"w":128,"h":128}
+},
+"run/0001":
+{
+	"frame": {"x":222,"y":1,"w":77,"h":116},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":25,"y":10,"w":77,"h":116},
+	"sourceSize": {"w":128,"h":128}
+},
+"run/0002":
+{
+	"frame": {"x":81,"y":114,"w":81,"h":113},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":24,"y":10,"w":81,"h":113},
+	"sourceSize": {"w":128,"h":128}
+},
+"stay/0000":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":101},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":26,"y":18,"w":83,"h":101},
+	"sourceSize": {"w":128,"h":128}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "playan.png",
+	"format": "RGBA8888",
+	"size": {"w":300,"h":300},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:02f110b482693da1070221ed414089de:50b1b5fd35ced5482155c56cf91d96da:f0b166dd6b4c95e0330ff2142c68e4fb$"
+}
+}
