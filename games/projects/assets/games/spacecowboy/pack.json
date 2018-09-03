@@ -1,0 +1,77 @@
+{
+  "preload": {
+    "files": [
+      {
+        "type": "bitmapFont",
+        "key": "font",
+        "textureURL": "assets/fonts/font.png",
+        "fontDataURL": "assets/fonts/font.fnt"
+      },
+      {
+        "type": "image",
+        "key": "background",
+        "url": "assets/sprites/bg.png"
+      },
+      {
+        "type": "image",
+        "key": "ship",
+        "url": "assets/games/flappyBird/sprites/bird.png"
+      },
+      {
+        "type": "spritesheet",
+        "key": "pipe",
+        "url": "assets/games/flappyBird/sprites/pipe.png",
+        "frameConfig": {
+          "frameWidth": 20,
+          "frameHeight": 20
+        }
+      },
+      {
+        "type": "audio",
+        "key": "bgmTitle",
+        "url": "assets/games/spacecowboy/bgm/bgm01.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "bgmMain",
+        "url": "assets/games/spacecowboy/bgm/bgm00.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "boostLeft",
+        "url": "assets/games/spacecowboy/se/se_000_00.wav"
+      },
+      {
+        "type": "audio",
+        "key": "boostRight",
+        "url": "assets/games/spacecowboy/se/se_000_01.wav"
+      },
+      {
+        "type": "audio",
+        "key": "bulletPlayer",
+        "url": "assets/games/spacecowboy/se/se_001_01.wav"
+      },
+      {
+        "type": "audio",
+        "key": "bulletEnemy",
+        "url": "assets/games/spacecowboy/se/se_001_00.wav"
+      },
+      {
+        "type": "audio",
+        "key": "laser",
+        "url": "assets/games/spacecowboy/se/se_001_02.wav"
+      },
+      {
+        "type": "audio",
+        "key": "explosion",
+        "url": "assets/games/spacecowboy/se/se_002_00.wav"
+      },
+      {
+        "type": "audio",
+        "key": "getItem",
+        "url": "assets/games/spacecowboy/se/se_003_00.wav"
+      }
+
+    ]
+  }
+}
