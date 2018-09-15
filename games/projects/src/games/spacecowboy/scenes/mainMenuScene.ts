@@ -1,46 +1,50 @@
+import { BackGround } from "../objects/backGround";
+
 export class MainMenuScene extends Phaser.Scene {
-    private startKey: Phaser.Input.Keyboard.Key;
-    private bitmapTexts: Phaser.GameObjects.BitmapText[] = [];
-  
+    private bgm: Phaser.Sound.BaseSound;
+    private bg: BackGround;
+
     constructor() {
       super({
         key: "MainMenuScene"
       });
     }
   
-    init(): void {
-      this.startKey = this.input.keyboard.addKey(
-        Phaser.Input.Keyboard.KeyCodes.S
-      );
-      this.startKey.isDown = false;
-    }
-  
     create(): void {
-      this.bitmapTexts.push(
-        this.add.bitmapText(
-          this.sys.canvas.width / 2 - 135,
-          this.sys.canvas.height / 2 - 80,
-          "flappyBirdFont",
-          "FLAPPY BIRD",
-          40
-        )
-      );
-  
-      this.bitmapTexts.push(
-        this.add.bitmapText(
-          this.sys.canvas.width / 2 - 50,
-          this.sys.canvas.height / 2 - 10,
-          "flappyBirdFont",
-          "S: PLAY",
-          30
-        )
-      );
-    }
-  
-    update(): void {
-      if (this.startKey.isDown) {
+      this.bgm = this.sound.add('bgmTitle');
+      this.bgm.play('', { loop: true, volume: 0.4 });
+      let width = this.sys.canvas.width;
+      let height = this.sys.canvas.height;
+
+      this.bg = new BackGround({scrollSpeed: new Phaser.Math.Vector2(0, -2), scene:this, x: width/2, y: height/2, width: width, height: height, texture: 'bg'});
+      
+      this.add.bitmapText(width/2, (height/6), "font", "Space Cowboy", 60)
+      .setOrigin(0.5,0.5);
+
+      let frameNames = this.anims.generateFrameNames('atlas', {
+        start: 0, end: 4, zeroPad: 1,
+        prefix: 'ship/idle/ship', suffix: '.png'
+      });
+      this.anims.create({ key: 'idle', frames: frameNames, frameRate: 10, repeat: -1 });
+      this.add.sprite(width/2, height/2, "atlas", "ship/idle/ship0.png")
+      .play('idle');
+
+      this.add.bitmapText(width/2, (height/6)*5, "font", "Tap Start", 60)
+      .setOrigin(0.5,0.5);
+
+      this.input.on("pointerdown", (pointer: Phaser.Geom.Point) => {
+        this.bgm.stop();
         this.scene.start("GameScene");
-      }
+      }, this);
+
+      this.input.keyboard.on('keydown', (event:KeyboardEvent) => {
+        this.bgm.stop();
+        this.scene.start("GameScene");
+      });
+    }
+
+    update(): void {
+      this.bg.update();
     }
   }
   

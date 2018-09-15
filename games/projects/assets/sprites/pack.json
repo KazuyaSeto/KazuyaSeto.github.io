@@ -1,0 +1,461 @@
+{
+	"textures": [
+		{
+			"image": "pack.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1547,
+				"h": 512
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "laser/laser2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 512
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 0,
+						"w": 45,
+						"h": 510
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 45,
+						"h": 510
+					}
+				},
+				{
+					"filename": "laser/laser0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 512
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 42,
+						"h": 510
+					},
+					"frame": {
+						"x": 48,
+						"y": 1,
+						"w": 42,
+						"h": 510
+					}
+				},
+				{
+					"filename": "laser/laser3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 512
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 0,
+						"w": 37,
+						"h": 509
+					},
+					"frame": {
+						"x": 92,
+						"y": 1,
+						"w": 37,
+						"h": 509
+					}
+				},
+				{
+					"filename": "laser/laser1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 512
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 0,
+						"w": 43,
+						"h": 508
+					},
+					"frame": {
+						"x": 131,
+						"y": 1,
+						"w": 43,
+						"h": 508
+					}
+				},
+				{
+					"filename": "bg.png",
+					"rotated": true,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 256,
+						"h": 512
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 256,
+						"h": 512
+					},
+					"frame": {
+						"x": 176,
+						"y": 1,
+						"w": 256,
+						"h": 512
+					}
+				},
+				{
+					"filename": "ship/idle/ship2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 48,
+						"y": 9,
+						"w": 155,
+						"h": 246
+					},
+					"frame": {
+						"x": 176,
+						"y": 259,
+						"w": 155,
+						"h": 246
+					}
+				},
+				{
+					"filename": "ship/idle/ship0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 48,
+						"y": 9,
+						"w": 155,
+						"h": 245
+					},
+					"frame": {
+						"x": 333,
+						"y": 259,
+						"w": 155,
+						"h": 245
+					}
+				},
+				{
+					"filename": "ship/idle/ship3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 48,
+						"y": 7,
+						"w": 155,
+						"h": 238
+					},
+					"frame": {
+						"x": 490,
+						"y": 259,
+						"w": 155,
+						"h": 238
+					}
+				},
+				{
+					"filename": "ship/idle/ship1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 48,
+						"y": 9,
+						"w": 155,
+						"h": 235
+					},
+					"frame": {
+						"x": 647,
+						"y": 259,
+						"w": 155,
+						"h": 235
+					}
+				},
+				{
+					"filename": "etc/capsel.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 8,
+						"w": 165,
+						"h": 227
+					},
+					"frame": {
+						"x": 690,
+						"y": 1,
+						"w": 165,
+						"h": 227
+					}
+				},
+				{
+					"filename": "etc/ufored.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 29,
+						"y": 12,
+						"w": 197,
+						"h": 215
+					},
+					"frame": {
+						"x": 804,
+						"y": 230,
+						"w": 197,
+						"h": 215
+					}
+				},
+				{
+					"filename": "explosion/explosion2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 21,
+						"w": 204,
+						"h": 214
+					},
+					"frame": {
+						"x": 857,
+						"y": 1,
+						"w": 204,
+						"h": 214
+					}
+				},
+				{
+					"filename": "explosion/explosion3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 23,
+						"w": 212,
+						"h": 212
+					},
+					"frame": {
+						"x": 1003,
+						"y": 217,
+						"w": 212,
+						"h": 212
+					}
+				},
+				{
+					"filename": "etc/ufogreen.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 25,
+						"w": 194,
+						"h": 208
+					},
+					"frame": {
+						"x": 1063,
+						"y": 1,
+						"w": 194,
+						"h": 208
+					}
+				},
+				{
+					"filename": "etc/meteo.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 36,
+						"y": 23,
+						"w": 176,
+						"h": 202
+					},
+					"frame": {
+						"x": 1217,
+						"y": 211,
+						"w": 176,
+						"h": 202
+					}
+				},
+				{
+					"filename": "bullet/bullet2.png",
+					"rotated": true,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 12,
+						"w": 95,
+						"h": 90
+					},
+					"frame": {
+						"x": 1217,
+						"y": 415,
+						"w": 95,
+						"h": 90
+					}
+				},
+				{
+					"filename": "bullet/bullet1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 16,
+						"w": 99,
+						"h": 89
+					},
+					"frame": {
+						"x": 1309,
+						"y": 415,
+						"w": 99,
+						"h": 89
+					}
+				},
+				{
+					"filename": "explosion/explosion1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 75,
+						"y": 9,
+						"w": 102,
+						"h": 167
+					},
+					"frame": {
+						"x": 1259,
+						"y": 1,
+						"w": 102,
+						"h": 167
+					}
+				},
+				{
+					"filename": "explosion/explosion0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 45,
+						"w": 155,
+						"h": 163
+					},
+					"frame": {
+						"x": 1363,
+						"y": 1,
+						"w": 155,
+						"h": 163
+					}
+				},
+				{
+					"filename": "ship/tapship.png",
+					"rotated": true,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 46,
+						"y": 59,
+						"w": 157,
+						"h": 151
+					},
+					"frame": {
+						"x": 1395,
+						"y": 166,
+						"w": 157,
+						"h": 151
+					}
+				},
+				{
+					"filename": "bullet/bullet0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 16,
+						"w": 105,
+						"h": 83
+					},
+					"frame": {
+						"x": 1395,
+						"y": 325,
+						"w": 105,
+						"h": 83
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:aa9e952572ed5a072f666d127a3d609b:2fddda500d9eeec03442d7a245ca57ae:04ba77fe288d2c37d2a68d67c5914175$"
+	}
+}

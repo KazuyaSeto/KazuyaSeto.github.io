@@ -1,73 +1,50 @@
+export enum BulletType { Bullet, Laser };
+
 export class Bullet extends Phaser.GameObjects.Sprite {
-    private jumpKey: Phaser.Input.Keyboard.Key;
-    private anim: Phaser.Tweens.Tween[];
-    private isDead: boolean = false;
-  
-    public getDead(): boolean {
-      return this.isDead;
-    }
-  
-    public setDead(dead): void {
-      this.isDead = dead;
-    }
-  
-    constructor(params) {
-      super(params.scene, params.x, params.y, params.key, params.frame);
-  
-      // image
-      this.setScale(3);
-      this.setOrigin(0, 0);
-  
-      // physics
-      params.scene.physics.world.enable(this);
-      this.body.setGravityY(1000);
-      this.body.setSize(17, 12);
-  
-      // animations & tweens
-      this.anim = [];
-      this.anim.push(
-        params.scene.tweens.add({
-          targets: this,
-          duration: 100,
-          angle: -20
-        })
-      );
-  
-      // input
-      this.jumpKey = params.scene.input.keyboard.addKey(
-        Phaser.Input.Keyboard.KeyCodes.SPACE
-      );
-  
-      params.scene.add.existing(this);
-    }
-  
-    update(): void {
-      this.handleAngleChange();
-      this.handleInput();
-      this.isOffTheScreen();
-    }
-  
-    private handleAngleChange(): void {
-      if (this.angle < 20) {
-        this.angle += 1;
-      }
-    }
-  
-    private handleInput(): void {
-      if (this.jumpKey.isDown) {
-        this.flap();
-      }
-    }
-  
-    public flap(): void {
-      this.body.setVelocityY(-350);
-      this.anim[0].restart();
-    }
-  
-    private isOffTheScreen(): void {
-      if (this.y + this.height > this.scene.sys.canvas.height) {
-        this.isDead = true;
-      }
+  private currentScene: Phaser.Scene;
+  private bulletSpeed: number;
+  private bulletType: BulletType;
+
+  constructor(params) {
+    super(params.scene, params.x, params.y, params.texture, params.frame);
+    this.play(params.animName, true, Phaser.Math.RND.integerInRange(0,3));
+    this.initVariables(params);
+    this.initImage(params.bulletProperties.bulletType);
+    this.initPhysics(params.bulletProperties.bulletType);
+
+    this.currentScene.add.existing(this);
+  }
+
+  public getBulletType(): BulletType {
+    return this.bulletType;
+  }
+
+  private initVariables(params): void {
+    this.currentScene = params.scene;
+    this.bulletSpeed = params.bulletProperties.speed;
+    this.bulletType = params.bulletProperties.bulletType;
+  }
+
+  private initImage(bulletType:BulletType): void {
+    if(bulletType == BulletType.Bullet) this.setOrigin(0.5, 1);
+    else {
+      this.setOrigin(0.5, 1);
+      this.setScale(1, 1.5);
     }
   }
+
+  private initPhysics(bulletType:BulletType): void {
+    this.currentScene.physics.world.enable(this);
+    this.body.setVelocityY(this.bulletSpeed);
+    if(bulletType == BulletType.Bullet) this.body.setSize(30, 20);
+    else this.body.setSize(30, 800);
+  }
+
+  update(): void {
+    if(!this.anims.isPlaying) this.destroy();
+    if (this.y < 0 || this.y > this.currentScene.sys.canvas.height) {
+      this.destroy();
+    }
+  }
+}
   

@@ -40,7 +40,8 @@ export class BootScene extends Phaser.Scene {
       );
   
       // load out package
-      this.load.pack("preload", "./assets/spacecowboy/pack.json", "preload");
+      this.load.pack("preload", "./assets/games/spacecowboy/pack.json", "preload");
+      this.load.multiatlas("atlas","./assets/sprites/pack.json", "assets/sprites");
     }
   
     update(): void {
