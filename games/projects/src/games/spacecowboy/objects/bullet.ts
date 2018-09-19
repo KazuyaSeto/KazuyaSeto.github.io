@@ -7,11 +7,14 @@ export class Bullet extends Phaser.GameObjects.Sprite {
 
   constructor(params) {
     super(params.scene, params.x, params.y, params.texture, params.frame);
-    this.play(params.animName, true, Phaser.Math.RND.integerInRange(0,3));
     this.initVariables(params);
     this.initImage(params.bulletProperties.bulletType);
     this.initPhysics(params.bulletProperties.bulletType);
-
+    if(this.bulletType == BulletType.Bullet) {
+      this.play(params.animName, true, Phaser.Math.RND.integerInRange(0,3));
+    } else {
+      this.play(params.animName, true, 0);
+    }
     this.currentScene.add.existing(this);
   }
 

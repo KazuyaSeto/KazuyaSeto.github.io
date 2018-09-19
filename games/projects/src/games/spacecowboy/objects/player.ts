@@ -81,6 +81,7 @@ export class Player extends Phaser.GameObjects.Sprite {
   }
 
   private initImage(): void {
+    this.setScale(0.8);
     this.setOrigin(0.5, 0.5);
   }
 

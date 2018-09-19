@@ -44,7 +44,7 @@ export class Enemy extends Phaser.Physics.Arcade.Sprite {
       super(params.scene, params.x, params.y, params.key, Enemy.getFrame(params.enemyType));
       this.enemyType = params.enemyType;
       // image
-      this.setScale(0.7);
+      this.setScale(0.5);
       this.setOrigin(0.5,0.5);
   
       // physics

@@ -13,7 +13,7 @@ export class Item extends Phaser.Physics.Arcade.Sprite {
     constructor(params) {
       super(params.scene, params.x, params.y, params.key, params.frame);
       // image
-      this.setScale(0.7);
+      this.setScale(0.4);
   
       // physics
       params.scene.physics.world.enable(this);
