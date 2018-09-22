@@ -6,6 +6,9 @@ export class ScoreScene extends Phaser.Scene {
     private money: integer;
     private rankingKey: string[] = ['1st', '2nd', '3rd'];
     private rankingIndex = -1;
+    private debtKey : string = 'debt';
+    private counter : integer = 0;
+    private debtText : Phaser.GameObjects.BitmapText = null;
     constructor() {
       super({
         key: "ScoreScene"
@@ -13,8 +16,21 @@ export class ScoreScene extends Phaser.Scene {
     }
 
     init(data): void {
+        this.debtText = null;
         this.rankingIndex = -1;
         this.money = data.money;
+        this.counter = 120;
+
+        if(!this.data.has(this.debtKey)) {
+          this.data.set(this.debtKey, 100000);
+        }
+
+        let debt = this.data.get(this.debtKey) - this.money;
+        if(debt < 0) {
+          debt = 0;
+        }
+        this.data.set(this.debtKey, debt);
+
         for(let index: integer = 0; index < this.rankingKey.length; index++) {
           if(!this.data.has(this.rankingKey[index])){
             this.data.set(this.rankingKey[index], 0);
@@ -46,12 +62,15 @@ export class ScoreScene extends Phaser.Scene {
         let text = this.add.bitmapText(width/2, (height/8) + index*60, "font", this.rankingKey[index] + ' $'+ ranking, 40)
         .setOrigin(0.5,0.5).setDepth(1000);
         if(this.money == ranking) {
-          text.setTint(0xff00ff);
+          text.setTint(0x00ff00);
         }
       }
 
-      this.add.bitmapText(width/2, (height/8) + this.rankingKey.length*60 + 30, "font", 'now $'+this.money, 40)
-      .setOrigin(0.5,0.5).setDepth(1000).setTint(0xff00ff);
+      this.add.bitmapText(width/2, (height/8) + this.rankingKey.length*60 + 30, "font", 'Get $'+this.money, 40)
+      .setOrigin(0.5,0.5).setDepth(1000).setTint(0x00ff00);
+
+      this.debtText = this.add.bitmapText(width/2, (height/8) + this.rankingKey.length*60 + 80, "font", '- $'+this.money, 40)
+      .setOrigin(0.5,0.5).setDepth(1000).setTint(0xffff00);
 
 
       let frameNames = this.anims.generateFrameNames('atlas', {
@@ -78,6 +97,13 @@ export class ScoreScene extends Phaser.Scene {
 
     update(): void {
       this.bg.update();
+      let debt = this.data.get(this.debtKey) - (Math.floor(this.money / 120) * (1 - this.counter));
+      if(this.counter >= 0) {
+        if(this.counter == 0) debt = this.data.get(this.debtKey) ;
+        this.debtText.text = '- $' + debt;
+        this.debtText.setOrigin(0.5,0.5);
+        this.counter--;
+      }
     }
   }
   
