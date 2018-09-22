@@ -1,7 +1,7 @@
 import { GameScene } from "../scenes/gameScene";
 import { Enemy, EnemyType } from "../objects/enemy";
 import { BackGround } from "../objects/backGround";
-import { MissionType } from "./director";
+import { MissionType, MissionData } from "./director";
 
 // 敵キャラや障害物の生成
 export class StageCreator {
@@ -11,14 +11,16 @@ export class StageCreator {
     private gameScene:GameScene = null;
     private timerEvent:Phaser.Time.TimerEvent;
     private enemies: Phaser.GameObjects.Group;
+    private counter:integer;
 
-    private missionType:MissionType;
+    private missionData:MissionData = null;    
     
     constructor() {
         this.timerEvent = null;
     }
 
     public init(gameScene:GameScene) : void {
+        this.counter = 0;
         this.gameScene = gameScene;
         this.enemies = this.gameScene.add.group({ runChildUpdate: true });
         this.createBackGround();
@@ -33,6 +35,7 @@ export class StageCreator {
     }
     
     public setGameSpeed(speed:number) : void{
+        this.counter = 0;        
         this.gameSpeed = speed;
         this.bg.setScrollSpeed(new Phaser.Math.Vector2(0, -speed));
         this.getEnemies().getChildren().forEach( (gameobject, index) => {
@@ -41,15 +44,9 @@ export class StageCreator {
         } );
     }
 
-    public startStage(missionType:MissionType): void {
-        this.missionType = missionType;
-        if(missionType == MissionType.AsteroidBelt) {
-            this.setGameSpeed(6);
-        } else if(missionType == MissionType.ShottingDown) {
-            this.setGameSpeed(5);
-        } else {
-            this.setGameSpeed(3);
-        }
+    public startStage(missionData:MissionData, missionCount:integer): void {
+        this.missionData = missionData;
+        this.setGameSpeed(this.missionData.speed + missionCount * 0.1);
 
         if(this.timerEvent != null){
             this.timerEvent.destroy();
@@ -58,7 +55,7 @@ export class StageCreator {
 
         this.timerEvent = this.gameScene.time.addEvent(
             {
-                delay: 2000/this.getGameSpeed(),
+                delay: this.missionData.createSpeed - (missionCount * 5),
                 callback: this.createEnemies,
                 callbackScope: this,
                 loop: false,
@@ -79,18 +76,18 @@ export class StageCreator {
     }
 
     private createEnemies(): void {
-        if(this.missionType == MissionType.ShottingDown) {
-            let enemyTypes = [EnemyType.ufored, EnemyType.ufogreen, EnemyType.meteo];
-            var type = enemyTypes[Math.floor(Math.random() * enemyTypes.length)];
-            let select = Phaser.Math.RND.integerInRange(0,2);
+        if(this.missionData.type == MissionType.ShottingDown) {
+            var type = this.missionData.enemyTypes[Math.floor(Math.random() * this.missionData.enemyTypes.length)];
+            
+            let select : integer = Math.floor(this.counter / 5);
             for(let index = 0; index < 3; index++) {
                 if(select == index) {
                     this.createEnemy(index,type);
                 }
             }
-        } else if(this.missionType == MissionType.AsteroidBelt) {
-            let enemyTypes = [EnemyType.meteo];
-            var type = enemyTypes[Math.floor(Math.random() * enemyTypes.length)];
+            this.counter++;            
+        } else if(this.missionData.type == MissionType.AsteroidBelt) {
+            var type = this.missionData.enemyTypes[Math.floor(Math.random() * this.missionData.enemyTypes.length)];
             let select = Phaser.Math.RND.integerInRange(0,2);
             for(let index = 0; index < 3; index++) {
                 if(select != index) {
@@ -98,11 +95,10 @@ export class StageCreator {
                 }
             }
         } else {
-            let enemyTypes = [EnemyType.ufored, EnemyType.ufogreen];
-            var type = enemyTypes[Math.floor(Math.random() * enemyTypes.length)];
+            var type = this.missionData.enemyTypes[Math.floor(Math.random() * this.missionData.enemyTypes.length)];
             let select = Phaser.Math.RND.integerInRange(0,2);
             for(let index = 0; index < 3; index++) {
-                if(select != index) {
+                if(select == index) {
                     this.createEnemy(index,type);
                 }
             }            

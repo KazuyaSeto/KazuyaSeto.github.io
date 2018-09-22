@@ -39,7 +39,7 @@ export class Bullet extends Phaser.GameObjects.Sprite {
   private initPhysics(bulletType:BulletType): void {
     this.currentScene.physics.world.enable(this);
     this.body.setVelocityY(this.bulletSpeed);
-    if(bulletType == BulletType.Bullet) this.body.setSize(30, 20);
+    if(bulletType == BulletType.Bullet) this.body.setSize(30, 60);
     else this.body.setSize(30, 800);
   }
 

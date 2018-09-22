@@ -171,10 +171,9 @@ export class GameScene extends Phaser.Scene {
     }
 
     this.addMoney(enemy.getMoney());
+       
+    this.director.shotDown(enemy);
     
-    enemy.gotHurt();
-    this.sound.play('explosion');
-    this.director.getStageCreator().getEnemies().remove(enemy);
     if(enemy.getType() == EnemyType.ufogreen) {
       this.dropCapsel(enemy);
     }
@@ -236,6 +235,10 @@ export class GameScene extends Phaser.Scene {
 
   public getMainUI() : MainUI{
     return this.mainUi;
+  }
+
+  public getPlayer() : Player {
+    return this.player;
   }
 
 }

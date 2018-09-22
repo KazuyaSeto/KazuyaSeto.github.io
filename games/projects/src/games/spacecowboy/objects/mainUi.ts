@@ -1,6 +1,7 @@
 import { MissionType } from "../system/director";
 
 export class MainUI extends Phaser.GameObjects.Group {
+    private missionStartText: Phaser.GameObjects.BitmapText;
     private missionText: Phaser.GameObjects.BitmapText;
     private missionCounter: number = 0;
     
@@ -28,6 +29,7 @@ export class MainUI extends Phaser.GameObjects.Group {
         this.missionCounter--;
         if(this.missionCounter <= 0) {
             this.missionCounter = 0;
+            this.missionStartText.setVisible(false);
             this.missionText.setVisible(false);
         }
     }
@@ -42,7 +44,11 @@ export class MainUI extends Phaser.GameObjects.Group {
         this.addMoneyText.setOrigin(1,0);
         this.addMoneyText.setTint(0x00ff00);
         this.addMoneyText.setDepth(1000);
-        this.missionText = this.scene.add.bitmapText(width/2, height/2, "font", '', 48);
+        this.missionStartText = this.scene.add.bitmapText(width/2, height/2 - 40, "font", '', 40);
+        this.missionStartText.setOrigin(0.5,1);
+        this.missionStartText.setTint(0xff00ff);
+        this.missionStartText.setDepth(1000);
+        this.missionText = this.scene.add.bitmapText(width/2, height/2, "font", '', 40);
         this.missionText.setOrigin(0.5,1);
         this.missionText.setTint(0xff00ff);
         this.missionText.setDepth(1000);
@@ -56,12 +62,15 @@ export class MainUI extends Phaser.GameObjects.Group {
         this.addMoneyText.setText('+'+ this.addMoneyAmount);
     }
 
-    public startMission(missionType:MissionType) {
+    public startMission(missionType:MissionType, missionCount:integer) {
         this.missionCounter = 120;
+        this.missionStartText.text = 'Mission ' + missionCount;
+        this.missionStartText.setVisible(true);
+        this.missionStartText.setOrigin(0.5,1);  
         if(missionType == MissionType.AsteroidBelt) {
-            this.missionText.text = 'Avoid asteroids';
+            this.missionText.text = 'Avoid Asteroids';
         } else if(missionType == MissionType.ShottingDown) {
-            this.missionText.text = 'Shoot down';
+            this.missionText.text = 'Shoot Down';
         } else if(missionType == MissionType.Wanted) {
             this.missionText.text = 'Wanted';
         }
@@ -69,10 +78,17 @@ export class MainUI extends Phaser.GameObjects.Group {
         this.missionText.setOrigin(0.5,1);    
     }
 
-    public clearMission() {
+    public clearMission() : void {
         this.missionCounter = 120;
-        this.missionText.text = 'Mission Clear';
-        this.missionText.setVisible(true);  
-        this.missionText.setOrigin(0.5,1);    
+        this.missionStartText.text = 'Mission Clear';
+        this.missionStartText.setVisible(true);  
+        this.missionStartText.setOrigin(0.5,1);    
+    }
+
+    public failureMission() : void {
+        this.missionCounter = 120;
+        this.missionStartText.text = 'Mission Failure';
+        this.missionStartText.setVisible(true);  
+        this.missionStartText.setOrigin(0.5,1);  
     }
 } 
