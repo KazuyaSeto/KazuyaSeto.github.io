@@ -1,6 +1,6 @@
 import { GameScene } from "../scenes/gameScene";
 import { Enemy, EnemyType } from "../objects/enemy";
-import { BackGround } from "../objects/backGround";
+import { BackGround } from "../../gameSystem/backGround";
 import { MissionType, MissionData } from "./director";
 
 // 敵キャラや障害物の生成

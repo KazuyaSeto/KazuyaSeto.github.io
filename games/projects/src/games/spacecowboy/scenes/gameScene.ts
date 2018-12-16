@@ -1,4 +1,3 @@
-import { BackGround } from "../objects/backGround";
 import { Bullet, BulletType } from "../objects/bullet";
 import { Player } from "../objects/player";
 import { Enemy } from "../objects/enemy";

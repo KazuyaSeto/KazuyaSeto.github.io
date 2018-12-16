@@ -1,0 +1,37 @@
+{
+  "preload": {
+    "files": [
+      {
+        "type": "bitmapFont",
+        "key": "font",
+        "textureURL": "assets/fonts/conconfont-export.png",
+        "fontDataURL": "assets/fonts/conconfont-export.xml"
+      },
+      {
+        "type": "audio",
+        "key": "bgmTitle",
+        "url": "assets/sounds/bgm/bgm20.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "con0",
+        "url": "assets/sounds/se/se_005_00.wav"
+      },
+      {
+        "type": "audio",
+        "key": "con1",
+        "url": "assets/sounds/se/se_005_01.wav"
+      },
+      {
+        "type": "audio",
+        "key": "conJust",
+        "url": "assets/sounds/se/se_005_02.wav"
+      },
+      {
+        "type": "audio",
+        "key": "miss",
+        "url": "assets/sounds/se/se_005_03.wav"
+      }
+    ]
+  }
+}

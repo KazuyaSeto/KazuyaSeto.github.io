@@ -1,4 +1,4 @@
-import { BackGround } from "../objects/backGround";
+import { BackGround } from "../../gameSystem/backGround";
 
 export class MainMenuScene extends Phaser.Scene {
     private bgm: Phaser.Sound.BaseSound;

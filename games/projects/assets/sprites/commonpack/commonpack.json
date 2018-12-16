@@ -1,0 +1,41 @@
+{
+	"textures": [
+		{
+			"image": "commonpack.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 148,
+				"h": 171
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "tap.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 170,
+						"h": 170
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 146,
+						"h": 169
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 146,
+						"h": 169
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:fdfab848572fe053c9946546802155dc:0891d1d1137518dda53ff17af5bfecb7:1ee27b2f76e5af7bfa84822bfe17d0cc$"
+	}
+}
