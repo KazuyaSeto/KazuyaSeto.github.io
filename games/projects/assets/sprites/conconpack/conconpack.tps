@@ -132,7 +132,7 @@
             <key>json</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename></filename>
+                <filename>conconpack.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -177,7 +177,7 @@
             <key>defaultPivotPoint</key>
             <point_f>0.5,0.5</point_f>
             <key>writePivotPoints</key>
-            <false/>
+            <true/>
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
@@ -197,10 +197,23 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">piston/piston0.png</key>
+            <key type="filename">conconpack.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>255,126,509,253</rect>
+                <key>scale9Paddings</key>
+                <rect>255,126,509,253</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">piston/piston0.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.507614,0.792453</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
@@ -213,7 +226,7 @@
             <key type="filename">piston/piston1.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
+                <point_f>0.484694,0.767442</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
@@ -226,7 +239,7 @@
             <key type="filename">piston/piston2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
+                <point_f>0.509709,0.73913</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
