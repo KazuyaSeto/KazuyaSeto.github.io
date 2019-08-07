@@ -11,13 +11,23 @@ body {
     color: #052169;
 }
 
+h1 {
+    font-size: x-large;
+    line-height: 160%;
+}
+
+h2 {
+    font-size: large;
+    line-height: 160%;
+}
+
 a {
     color: #227ce8;
     text-decoration: none;
 }
 
 header {
-    font-size: small;
+    font-size: medium;
     text-align: right;
 }
 
