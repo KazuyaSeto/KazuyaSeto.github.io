@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
-@import url(https://fonts.googleapis.com/earlyaccess/roundedmplus:1c:100);
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap');
 
 body {
-    max-width: 500px;
+    max-width: 560px;
     margin: 4em auto 2em auto;
-    font-family: 'Tsukushi A Round Gothic',"Rounded Mplus 1c";
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     background: white;
     text-align: left;
     color: #052169;
@@ -14,7 +14,7 @@ body {
 h1 {
     line-height: 160%;
     font-size: xx-large;
-    height: 100%;
+    width: 100%;
 }
 
 h2 {
@@ -50,14 +50,9 @@ p {
 }
 
 .wrapper {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-flow: row no-wrap;
 }
 
 
