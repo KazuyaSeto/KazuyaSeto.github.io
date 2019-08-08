@@ -6,7 +6,7 @@ body {
     max-width: 560px;
     margin: 4em auto 2em auto;
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    background: white;
+    background: whitesmoke;
     text-align: left;
     color: #052169;
 }
@@ -46,3 +46,8 @@ p {
     width: 320px;
 }
 
+img.gameicon:hover {
+    cursor: pointer;
+    transform: scale(1.03, 1.03);
+    opacity: 0.8;
+}
