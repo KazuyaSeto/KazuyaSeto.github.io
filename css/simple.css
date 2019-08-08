@@ -11,6 +11,11 @@ body {
     color: #052169;
 }
 
+img {
+  max-width: 100%;
+  height: atuo;
+}
+
 h1 {
     width: 100%;
 }
