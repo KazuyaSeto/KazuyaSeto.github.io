@@ -53,6 +53,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    size: 1;
 }
 
 .static {
