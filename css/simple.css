@@ -55,16 +55,17 @@ p {
     justify-content: space-between;
 }
 
-h1.wrapper {
-    height: 100%;
-    font-size: xx-large;
+.static {
+    width: 100%;
 }
 
-p.wrapper {
-    height: 100%;
-    font-size: large;
+.sub {
+    width: 100%;
+    text-align: right;
+
 }
 
-
-
+p.sub {
+    width: auto;
+}
 
