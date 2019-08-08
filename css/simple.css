@@ -55,6 +55,16 @@ p {
     justify-content: space-between;
 }
 
+h1.wrapper {
+    height: 100%;
+    font-size: xx-large;
+}
+
+p.wrapper {
+    height: 100%;
+    font-size: large;
+}
+
 
 
 
