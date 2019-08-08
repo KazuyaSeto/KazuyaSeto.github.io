@@ -13,13 +13,13 @@ body {
 
 h1 {
     line-height: 160%;
-    font-size: xx-large;
+    font-size: 3vw;
     width: 100%;
 }
 
 h2 {
     line-height: 150%;
-    font-size: larger;
+    font-size: 2vw;
 }
 
 a {
@@ -32,11 +32,11 @@ header {
 }
 
 article p {
-    line-height: 1.5em;
+    line-height: 1.5vw;
 }
 
 p {
-    line-height: 1.4em;
+    line-height: 1.4vw;
 }
 
 .catalog-item {
