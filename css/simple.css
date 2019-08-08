@@ -12,13 +12,11 @@ body {
 }
 
 h1 {
-    font-size: xx-large;
     line-height: 160%;
 }
 
 h2 {
-    font-size: large;
-    line-height: 160%;
+    line-height: 150%;
 }
 
 a {
@@ -27,7 +25,6 @@ a {
 }
 
 header {
-    font-size: medium;
     text-align: right;
 }
 
@@ -49,7 +46,7 @@ p {
     width: 320px;
 }
 
-.wrapper{
+.wrapper {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -59,5 +56,7 @@ p {
     justify-content: space-between;
     flex-flow: row no-wrap;
 }
+
+
 
 
