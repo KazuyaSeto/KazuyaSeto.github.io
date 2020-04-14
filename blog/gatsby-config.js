@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/blog/public',
   plugins: [
     {
       resolve: `gatsby-theme-blog`,
