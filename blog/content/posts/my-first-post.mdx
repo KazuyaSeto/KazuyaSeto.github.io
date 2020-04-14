@@ -1,5 +1,5 @@
 ---
-title: ブログを作ってみた
+title: ブログを作りました
 date: 2020-04-14
 keywords:
   - ブログ
@@ -9,7 +9,7 @@ keywords:
 どっかでブログ始めたいと思ったけどサービス使うのもなぁと思い、静的サイトジェネレータなるものを調べたところ
 
 - 自分で機能拡張しやすい
-- マークダウン出かける
+- マークダウンで書ける
 - バージョン管理ができる
 - やめるときもマークダウンなので移行もしやすそう
 - サーバ契約しなくて良い
@@ -21,4 +21,27 @@ keywords:
 以下を参考にしました。すぐ試せました○
 
 [Gatsby で gatsby-theme-blog を使うときの tips](https://gotohayato.com/content/502/)
+
+僕の場合はgithub pagesのリポジトリでソースコードを管理しつつそのまま公開しているので
+ブログのディレクトリを指定しないとうまく動作しないみたいです。
+gatsbyでビルドするとpublicに出力されるのでそこを指定します。
+
+```js:title=gatsby-config.js
+module.exports = {
+  pathPrefix: '/blog/public', // highlight-line
+  plugins: [
+    {
+      resolve: `gatsby-theme-blog`,
+      options: {},
+    },
+  ]
+};
+```
+
+ビルドするときは下のコマンド
+
+```sh:
+gatsby build --prefix-paths
+```
+
 
