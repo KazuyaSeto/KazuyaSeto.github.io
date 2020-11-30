@@ -22,7 +22,11 @@ h1 {
 
 h2 {
     line-height: 150%;
-    margin-top: 3em;
+    margin-top: 2em;
+}
+
+h3 {
+    margin-top: 1.5em;
 }
 
 a {
@@ -56,4 +60,12 @@ img.gameicon:hover {
     cursor: pointer;
     transform: scale(1.03, 1.03);
     opacity: 0.8;
+}
+
+.center {
+    text-align: center;
+}
+.center * {
+    margin-right: auto;
+    margin-left: auto;
 }
