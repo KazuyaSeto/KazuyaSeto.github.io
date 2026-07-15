@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Load Styles -->
+    
+      <link
+        rel="stylesheet"
+        href="https://studioplease.games/style.css"
+      />
+    
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    
+    // Zolaが出力する <pre><code class="language-mermaid"> を 
+    // Mermaidが認識できる <div class="mermaid"> に変換する処理
+    document.addEventListener("DOMContentLoaded", function() {
+      const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+      mermaidBlocks.forEach((block) => {
+        const pre = block.parentElement;
+        const div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = block.textContent;
+        pre.replaceWith(div);
+      });
+      mermaid.initialize({ startOnLoad: true });
+    });
+  </script>
+  <!-- KaTeXのCSSとJSの読み込み -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+      onload="renderMathInElement(document.body);"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "$", right: "$", display: false}
+              ]
+          });
+      });
+  </script>
+  <title>Studio Please Archive</title>
+</head>
+
+<body>
+  <header class="sitename">
+      <h1 class="sitename">Studio Please Archive</h1>
+      <p>Programming, Game Engine, 3DCG, Life, Coffee, and More</p>
+  </header>
+  <nav>
+      <p>
+        / <a href="https://studioplease.games/">Home</a>
+        / <a href="https://studioplease.games/blog/">Posts</a> 
+        / <a href="https://studioplease.games/journal/">Journal</a> 
+        / <a href="https://studioplease.games/museum/">Museum</a> 
+        / <a href="https://studioplease.games/projects/">Projects</a> 
+        / <a href="https://studioplease.games/about/">About</a> 
+        /
+      </p>
+  </nav>
+  <main>
+      
+<h1 class="title">
+  Museum
+</h1>
+<ul>
+  <!-- If you are using pagination, section.pages will be empty.
+       You need to use the paginator object -->  
+  
+</ul>
+
+  </main>
+  <footer class="footer">
+      <p>© 2026 Studio Please Archive All Rights Reserved.</p>
+  </footer>
+
+
+</body>
+
+</html>
